@@ -1,185 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JN STORE | Watches & Perfumes</title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Arial,Helvetica,sans-serif;background:#0b0b0b;color:#fff;line-height:1.5}
-    a{text-decoration:none;color:inherit}
-    .container{width:min(1180px,92%);margin:auto}
-    header{position:sticky;top:0;z-index:10;background:rgba(11,11,11,.96);border-bottom:1px solid #292929}
-    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .logo{font-size:25px;font-weight:800;letter-spacing:2px}
-    .logo span{color:#d4af37}
-    nav a{margin-left:22px;color:#ddd;font-size:14px}
-    nav a:hover{color:#d4af37}
-    .hero{padding:90px 0 75px;text-align:center;background:radial-gradient(circle at top,#262014 0,#0b0b0b 52%)}
-    .hero h1{font-size:clamp(38px,7vw,76px);letter-spacing:3px;margin-bottom:15px}
-    .gold{color:#d4af37}
-    .hero p{max-width:650px;margin:0 auto 30px;color:#bbb;font-size:17px}
-    .btn{display:inline-block;padding:13px 24px;border:1px solid #d4af37;color:#d4af37;border-radius:4px;font-weight:700}
-    .btn:hover{background:#d4af37;color:#111}
-    section{padding:70px 0}
-    .section-title{text-align:center;margin-bottom:38px}
-    .section-title h2{font-size:34px;margin-bottom:8px}
-    .section-title p{color:#999}
-    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
-    .card{background:#151515;border:1px solid #292929;border-radius:10px;overflow:hidden;transition:.2s}
-    .card:hover{transform:translateY(-4px);border-color:#d4af37}
-    .product-img{height:270px;background:#202020;display:flex;align-items:center;justify-content:center;color:#777;font-size:15px;text-align:center;padding:20px}
-    .product-img img{width:100%;height:100%;object-fit:cover;display:block}
-    .info{padding:20px}
-    .info h3{font-size:19px;margin-bottom:6px}
-    .info p{color:#999;font-size:14px;min-height:42px}
-    .price{color:#d4af37;font-size:20px;font-weight:700;margin-top:12px}
-    .about{background:#111;border-top:1px solid #222;border-bottom:1px solid #222}
-    .about-box{max-width:800px;margin:auto;text-align:center}
-    .about-box p{color:#aaa;font-size:16px}
-    footer{padding:30px 0;text-align:center;color:#777;font-size:13px}
-    .note{margin-top:25px;text-align:center;color:#666;font-size:13px}
-    @media(max-width:650px){
-      nav{padding:12px 0;flex-direction:column}
-      nav a{margin:0 8px}
-      .hero{padding:65px 0}
-      section{padding:50px 0}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JN Store | Watches & Perfumes</title>
+<meta name="description" content="JN Store - Premium watches and perfumes.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f7;color:#171717;line-height:1.5}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+.container{width:min(1180px,92%);margin:auto}
+
+/* Header */
+header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #eee}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:25px;font-weight:800;letter-spacing:1px}
+.logo span{font-weight:400}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:14px;font-weight:600}
+.cart-btn{border:0;background:#111;color:#fff;padding:10px 16px;border-radius:999px}
+.cart-count{background:#fff;color:#111;padding:1px 6px;border-radius:50%;margin-left:4px}
+
+/* Hero */
+.hero{min-height:560px;display:grid;place-items:center;text-align:center;background:linear-gradient(135deg,#111,#292929 55%,#111);color:#fff}
+.hero-inner{padding:80px 0}
+.badge{display:inline-block;border:1px solid #777;padding:7px 14px;border-radius:30px;font-size:12px;letter-spacing:2px;margin-bottom:20px}
+.hero h1{font-size:clamp(42px,7vw,78px);line-height:1.02;margin-bottom:20px}
+.hero p{max-width:650px;margin:0 auto 30px;color:#ddd;font-size:17px}
+.hero-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:8px;border:1px solid #fff;font-weight:700}
+.btn-light{background:#fff;color:#111}
+.btn-dark{background:#111;color:#fff;border-color:#111}
+
+/* Sections */
+section{padding:75px 0}
+.section-head{text-align:center;margin-bottom:38px}
+.section-head .eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#777;font-weight:700}
+.section-head h2{font-size:38px;margin:8px 0}
+.section-head p{color:#666;max-width:620px;margin:auto}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:#fff;border:1px solid #e9e9e9;border-radius:16px;overflow:hidden;transition:.2s;box-shadow:0 5px 18px rgba(0,0,0,.04)}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.09)}
+.product-img{height:270px;background:#eee;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.product-img img{width:100%;height:100%;object-fit:cover}
+.placeholder{color:#999;font-size:13px;text-align:center;padding:20px}
+.card-body{padding:18px}
+.category{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#888}
+.card h3{font-size:18px;margin:6px 0}
+.price{font-size:19px;font-weight:800;margin:10px 0 15px}
+.add-btn{width:100%;border:0;background:#111;color:#fff;padding:11px;border-radius:8px;font-weight:700}
+.add-btn:hover{background:#333}
+
+/* Feature strip */
+.features{background:#111;color:#fff}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.feature{text-align:center;padding:12px}
+.feature-icon{font-size:28px;margin-bottom:8px}
+.feature h3{font-size:16px}
+.feature p{font-size:13px;color:#aaa;margin-top:5px}
+
+/* Cart drawer */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1100}
+.overlay.show{display:block}
+.cart-drawer{position:fixed;right:-420px;top:0;height:100vh;width:min(420px,92vw);background:#fff;z-index:1200;padding:24px;transition:.25s;display:flex;flex-direction:column}
+.cart-drawer.show{right:0}
+.cart-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;padding-bottom:15px}
+.close{border:0;background:#eee;width:34px;height:34px;border-radius:50%}
+.cart-items{flex:1;overflow:auto;padding:15px 0}
+.cart-item{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid #eee}
+.cart-item small{color:#777}
+.remove{border:0;background:none;color:#b00020;font-size:12px}
+.cart-total{border-top:1px solid #eee;padding-top:16px;font-size:20px;font-weight:800}
+.checkout{width:100%;margin-top:12px;background:#111;color:#fff;border:0;padding:13px;border-radius:8px}
+
+/* Footer */
+footer{background:#fff;border-top:1px solid #eee;padding:45px 0;text-align:center}
+footer h3{font-size:22px}
+footer p{color:#777;margin:8px 0}
+.footer-note{font-size:12px;margin-top:20px;color:#aaa}
+
+/* Responsive */
+@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.nav-links{gap:12px}.hero{min-height:500px}}
+@media(max-width:600px){.nav{height:auto;padding:15px 0;flex-wrap:wrap}.nav-links{order:3;width:100%;justify-content:center}.products{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr}.hero h1{font-size:46px}section{padding:55px 0}}
+</style>
 </head>
 <body>
 
 <header>
-  <div class="container">
-    <nav>
-      <div class="logo">JN <span>STORE</span></div>
-      <div>
-        <a href="#watches">Watches</a>
-        <a href="#perfumes">Perfumes</a>
-        <a href="#about">About</a>
-      </div>
+  <div class="container nav">
+    <a class="logo" href="#home">JN <span>STORE</span></a>
+    <nav class="nav-links">
+      <a href="#watches">Watches</a>
+      <a href="#perfumes">Perfumes</a>
+      <a href="#about">About</a>
     </nav>
+    <button class="cart-btn" onclick="openCart()">Cart <span class="cart-count" id="cartCount">0</span></button>
   </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="container">
-      <h1>JN <span class="gold">STORE</span></h1>
-      <p>Discover stylish watches and premium fragrances selected for everyday confidence and timeless style.</p>
-      <a class="btn" href="#watches">Explore Collection</a>
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <span class="badge">JN STORE</span>
+    <h1>TIMELESS STYLE.<br>PERSONAL SIGNATURE.</h1>
+    <p>Discover carefully selected watches and fragrances designed to add a refined touch to your everyday style.</p>
+    <div class="hero-buttons">
+      <a href="#watches" class="btn btn-light">Shop Watches</a>
+      <a href="#perfumes" class="btn">Explore Perfumes</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="watches">
-    <div class="container">
-      <div class="section-title">
-        <h2>Watches</h2>
-        <p>Update the product names, prices and images whenever you are ready.</p>
-      </div>
-
-      <div class="products">
-        <article class="card">
-          <div class="product-img">WATCH IMAGE 01</div>
-          <div class="info">
-            <h3>Classic Watch</h3>
-            <p>Elegant everyday watch. Replace this text with your product details.</p>
-            <div class="price">Rs. 0,000</div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="product-img">WATCH IMAGE 02</div>
-          <div class="info">
-            <h3>Luxury Watch</h3>
-            <p>Premium style for formal and casual occasions.</p>
-            <div class="price">Rs. 0,000</div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="product-img">WATCH IMAGE 03</div>
-          <div class="info">
-            <h3>Modern Watch</h3>
-            <p>Clean design with a modern look.</p>
-            <div class="price">Rs. 0,000</div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="product-img">WATCH IMAGE 04</div>
-          <div class="info">
-            <h3>Premium Watch</h3>
-            <p>Add your specifications and product information here.</p>
-            <div class="price">Rs. 0,000</div>
-          </div>
-        </article>
-      </div>
+<section id="watches">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Collection 01</div>
+      <h2>Premium Watches</h2>
+      <p>Replace the sample products below with your own watch pictures, names and prices.</p>
     </div>
-  </section>
+    <div class="products">
 
-  <section id="perfumes">
-    <div class="container">
-      <div class="section-title">
-        <h2>Perfumes</h2>
-        <p>Premium fragrances with editable product cards.</p>
-      </div>
-
-      <div class="products">
-        <article class="card">
-          <div class="product-img">PERFUME IMAGE 01</div>
-          <div class="info">
-            <h3>Signature Perfume</h3>
-            <p>Replace this with fragrance notes and product details.</p>
-            <div class="price">Rs. 0,000</div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="product-img">PERFUME IMAGE 02</div>
-          <div class="info">
-            <h3>Classic Fragrance</h3>
-            <p>A placeholder product card ready for your real image.</p>
-            <div class="price">Rs. 0,000</div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="product-img">PERFUME IMAGE 03</div>
-          <div class="info">
-            <h3>Premium Fragrance</h3>
-            <p>Add scent notes, size and other information here.</p>
-            <div class="price">Rs. 0,000</div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="product-img">PERFUME IMAGE 04</div>
-          <div class="info">
-            <h3>Luxury Fragrance</h3>
-            <p>Ready for your actual product information.</p>
-            <div class="price">Rs. 0,000</div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="about">
-    <div class="container">
-      <div class="about-box">
-        <div class="section-title">
-          <h2>About JN STORE</h2>
+      <article class="card">
+        <div class="product-img">
+          <div class="placeholder">WATCH IMAGE 01<br>Replace with your product photo</div>
         </div>
-        <p>Welcome to JN STORE. We bring together stylish watches and quality fragrances in one simple online collection.</p>
-      </div>
+        <div class="card-body">
+          <div class="category">Watch</div><h3>Classic Black Watch</h3>
+          <div class="price">Rs. 4,999</div>
+          <button class="add-btn" onclick="addToCart('Classic Black Watch',4999)">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="product-img">
+          <div class="placeholder">WATCH IMAGE 02<br>Replace with your product photo</div>
+        </div>
+        <div class="card-body">
+          <div class="category">Watch</div><h3>Silver Chronograph</h3>
+          <div class="price">Rs. 5,499</div>
+          <button class="add-btn" onclick="addToCart('Silver Chronograph',5499)">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="product-img">
+          <div class="placeholder">WATCH IMAGE 03<br>Replace with your product photo</div>
+        </div>
+        <div class="card-body">
+          <div class="category">Watch</div><h3>Elegant Gold Watch</h3>
+          <div class="price">Rs. 5,999</div>
+          <button class="add-btn" onclick="addToCart('Elegant Gold Watch',5999)">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="product-img">
+          <div class="placeholder">WATCH IMAGE 04<br>Replace with your product photo</div>
+        </div>
+        <div class="card-body">
+          <div class="category">Watch</div><h3>Minimal Steel Watch</h3>
+          <div class="price">Rs. 4,499</div>
+          <button class="add-btn" onclick="addToCart('Minimal Steel Watch',4499)">Add to Cart</button>
+        </div>
+      </article>
+
     </div>
-  </section>
+  </div>
+</section>
+
+<div class="features">
+  <div class="container feature-grid">
+    <div class="feature"><div class="feature-icon">⌚</div><h3>Curated Watches</h3><p>Modern designs for every occasion.</p></div>
+    <div class="feature"><div class="feature-icon">✦</div><h3>Signature Fragrances</h3><p>Scents that leave an impression.</p></div>
+    <div class="feature"><div class="feature-icon">✓</div><h3>Easy Shopping</h3><p>Simple product browsing and cart.</p></div>
+  </div>
+</div>
+
+<section id="perfumes">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Collection 02</div>
+      <h2>Signature Perfumes</h2>
+      <p>Add your perfume collection here. Each card can use your own product image.</p>
+    </div>
+    <div class="products">
+
+      <article class="card">
+        <div class="product-img">
+          <div class="placeholder">PERFUME IMAGE 01<br>Replace with your product photo</div>
+        </div>
+        <div class="card-body">
+          <div class="category">Perfume</div><h3>Signature Noir</h3>
+          <div class="price">Rs. 3,499</div>
+          <button class="add-btn" onclick="addToCart('Signature Noir',3499)">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="product-img">
+          <div class="placeholder">PERFUME IMAGE 02<br>Replace with your product photo</div>
+        </div>
+        <div class="card-body">
+          <div class="category">Perfume</div><h3>Royal Oud</h3>
+          <div class="price">Rs. 3,999</div>
+          <button class="add-btn" onclick="addToCart('Royal Oud',3999)">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="product-img">
+          <div class="placeholder">PERFUME IMAGE 03<br>Replace with your product photo</div>
+        </div>
+        <div class="card-body">
+          <div class="category">Perfume</div><h3>Fresh Blue</h3>
+          <div class="price">Rs. 2,999</div>
+          <button class="add-btn" onclick="addToCart('Fresh Blue',2999)">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="product-img">
+          <div class="placeholder">PERFUME IMAGE 04<br>Replace with your product photo</div>
+        </div>
+        <div class="card-body">
+          <div class="category">Perfume</div><h3>Velvet Rose</h3>
+          <div class="price">Rs. 3,499</div>
+          <button class="add-btn" onclick="addToCart('Velvet Rose',3499)">Add to Cart</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">JN Store</div>
+      <h2>Simple. Refined. Yours.</h2>
+      <p>JN Store brings watches and fragrances together in one clean shopping experience. Product details, prices and photos can be updated whenever you add new stock.</p>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
-  <div class="container">© 2026 JN STORE. All rights reserved.</div>
+  <div class="container">
+    <h3>JN STORE</h3>
+    <p>Watches & Perfumes</p>
+    <div class="footer-note">© 2026 JN Store. All rights reserved.</div>
+  </div>
 </footer>
 
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-top"><h2>Your Cart</h2><button class="close" onclick="closeCart()">×</button></div>
+  <div class="cart-items" id="cartItems"><p style="color:#777">Your cart is empty.</p></div>
+  <div class="cart-total">Total: Rs. <span id="cartTotal">0</span></div>
+  <button class="checkout" onclick="checkout()">Proceed to Checkout</button>
+</aside>
+
+<script>
+let cart=[];
+
+function formatPKR(n){return n.toLocaleString('en-PK')}
+
+function addToCart(name,price){
+  cart.push({name,price});
+  renderCart();
+  openCart();
+}
+
+function removeFromCart(index){
+  cart.splice(index,1);
+  renderCart();
+}
+
+function renderCart(){
+  document.getElementById('cartCount').textContent=cart.length;
+  const box=document.getElementById('cartItems');
+  if(!cart.length){
+    box.innerHTML='<p style="color:#777">Your cart is empty.</p>';
+  }else{
+    box.innerHTML=cart.map((item,i)=>`
+      <div class="cart-item">
+        <div><strong>${item.name}</strong><br><small>Rs. ${formatPKR(item.price)}</small></div>
+        <button class="remove" onclick="removeFromCart(${i})">Remove</button>
+      </div>`).join('');
+  }
+  const total=cart.reduce((sum,item)=>sum+item.price,0);
+  document.getElementById('cartTotal').textContent=formatPKR(total);
+}
+
+function openCart(){
+  document.getElementById('cartDrawer').classList.add('show');
+  document.getElementById('overlay').classList.add('show');
+}
+function closeCart(){
+  document.getElementById('cartDrawer').classList.remove('show');
+  document.getElementById('overlay').classList.remove('show');
+}
+function checkout(){
+  if(!cart.length){alert('Your cart is empty.');return}
+  alert('Checkout is ready to be connected to WhatsApp or an online payment system.');
+}
+</script>
 </body>
 </html>

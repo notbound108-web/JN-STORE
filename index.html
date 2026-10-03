@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JN STORE | Watches & Perfumes</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,Helvetica,sans-serif;background:#0b0b0b;color:#fff;line-height:1.5}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(11,11,11,.96);border-bottom:1px solid #292929}
+    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-size:25px;font-weight:800;letter-spacing:2px}
+    .logo span{color:#d4af37}
+    nav a{margin-left:22px;color:#ddd;font-size:14px}
+    nav a:hover{color:#d4af37}
+    .hero{padding:90px 0 75px;text-align:center;background:radial-gradient(circle at top,#262014 0,#0b0b0b 52%)}
+    .hero h1{font-size:clamp(38px,7vw,76px);letter-spacing:3px;margin-bottom:15px}
+    .gold{color:#d4af37}
+    .hero p{max-width:650px;margin:0 auto 30px;color:#bbb;font-size:17px}
+    .btn{display:inline-block;padding:13px 24px;border:1px solid #d4af37;color:#d4af37;border-radius:4px;font-weight:700}
+    .btn:hover{background:#d4af37;color:#111}
+    section{padding:70px 0}
+    .section-title{text-align:center;margin-bottom:38px}
+    .section-title h2{font-size:34px;margin-bottom:8px}
+    .section-title p{color:#999}
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
+    .card{background:#151515;border:1px solid #292929;border-radius:10px;overflow:hidden;transition:.2s}
+    .card:hover{transform:translateY(-4px);border-color:#d4af37}
+    .product-img{height:270px;background:#202020;display:flex;align-items:center;justify-content:center;color:#777;font-size:15px;text-align:center;padding:20px}
+    .product-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .info{padding:20px}
+    .info h3{font-size:19px;margin-bottom:6px}
+    .info p{color:#999;font-size:14px;min-height:42px}
+    .price{color:#d4af37;font-size:20px;font-weight:700;margin-top:12px}
+    .about{background:#111;border-top:1px solid #222;border-bottom:1px solid #222}
+    .about-box{max-width:800px;margin:auto;text-align:center}
+    .about-box p{color:#aaa;font-size:16px}
+    footer{padding:30px 0;text-align:center;color:#777;font-size:13px}
+    .note{margin-top:25px;text-align:center;color:#666;font-size:13px}
+    @media(max-width:650px){
+      nav{padding:12px 0;flex-direction:column}
+      nav a{margin:0 8px}
+      .hero{padding:65px 0}
+      section{padding:50px 0}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">JN <span>STORE</span></div>
+      <div>
+        <a href="#watches">Watches</a>
+        <a href="#perfumes">Perfumes</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>JN <span class="gold">STORE</span></h1>
+      <p>Discover stylish watches and premium fragrances selected for everyday confidence and timeless style.</p>
+      <a class="btn" href="#watches">Explore Collection</a>
+    </div>
+  </section>
+
+  <section id="watches">
+    <div class="container">
+      <div class="section-title">
+        <h2>Watches</h2>
+        <p>Update the product names, prices and images whenever you are ready.</p>
+      </div>
+
+      <div class="products">
+        <article class="card">
+          <div class="product-img">WATCH IMAGE 01</div>
+          <div class="info">
+            <h3>Classic Watch</h3>
+            <p>Elegant everyday watch. Replace this text with your product details.</p>
+            <div class="price">Rs. 0,000</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="product-img">WATCH IMAGE 02</div>
+          <div class="info">
+            <h3>Luxury Watch</h3>
+            <p>Premium style for formal and casual occasions.</p>
+            <div class="price">Rs. 0,000</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="product-img">WATCH IMAGE 03</div>
+          <div class="info">
+            <h3>Modern Watch</h3>
+            <p>Clean design with a modern look.</p>
+            <div class="price">Rs. 0,000</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="product-img">WATCH IMAGE 04</div>
+          <div class="info">
+            <h3>Premium Watch</h3>
+            <p>Add your specifications and product information here.</p>
+            <div class="price">Rs. 0,000</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="perfumes">
+    <div class="container">
+      <div class="section-title">
+        <h2>Perfumes</h2>
+        <p>Premium fragrances with editable product cards.</p>
+      </div>
+
+      <div class="products">
+        <article class="card">
+          <div class="product-img">PERFUME IMAGE 01</div>
+          <div class="info">
+            <h3>Signature Perfume</h3>
+            <p>Replace this with fragrance notes and product details.</p>
+            <div class="price">Rs. 0,000</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="product-img">PERFUME IMAGE 02</div>
+          <div class="info">
+            <h3>Classic Fragrance</h3>
+            <p>A placeholder product card ready for your real image.</p>
+            <div class="price">Rs. 0,000</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="product-img">PERFUME IMAGE 03</div>
+          <div class="info">
+            <h3>Premium Fragrance</h3>
+            <p>Add scent notes, size and other information here.</p>
+            <div class="price">Rs. 0,000</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="product-img">PERFUME IMAGE 04</div>
+          <div class="info">
+            <h3>Luxury Fragrance</h3>
+            <p>Ready for your actual product information.</p>
+            <div class="price">Rs. 0,000</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-box">
+        <div class="section-title">
+          <h2>About JN STORE</h2>
+        </div>
+        <p>Welcome to JN STORE. We bring together stylish watches and quality fragrances in one simple online collection.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">© 2026 JN STORE. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

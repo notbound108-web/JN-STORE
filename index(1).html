@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JN Store - Watches and Perfumes" />
+  <title>JN Store | Watches & Perfumes</title>
+  <style>
+    :root{
+      --bg:#f7f7f7; --card:#fff; --text:#111; --muted:#666;
+      --accent:#111; --line:#e8e8e8; --gold:#b28a45;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    a{text-decoration:none;color:inherit}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1200px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-size:25px;font-weight:800;letter-spacing:1px}
+    .navlinks{display:flex;gap:22px;font-size:14px;font-weight:600}
+    .navlinks a:hover{opacity:.6}
+    .hero{background:#111;color:#fff;padding:90px 20px;text-align:center}
+    .hero-inner{max-width:850px;margin:auto}
+    .hero h1{font-size:clamp(40px,7vw,76px);line-height:1;margin-bottom:18px;letter-spacing:-2px}
+    .hero p{max-width:620px;margin:0 auto 28px;color:#d5d5d5;font-size:17px}
+    .btn{display:inline-block;background:#fff;color:#111;padding:13px 22px;border-radius:30px;font-weight:700;font-size:14px}
+    .btn:hover{transform:translateY(-2px)}
+    section{max-width:1200px;margin:auto;padding:65px 20px}
+    .section-head{text-align:center;margin-bottom:35px}
+    .section-head h2{font-size:34px;margin-bottom:8px}
+    .section-head p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .product{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s;box-shadow:0 5px 20px rgba(0,0,0,.04)}
+    .product:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.09)}
+    .product-img{aspect-ratio:1/1;background:#ededed;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .product-img img{width:100%;height:100%;object-fit:cover}
+    .placeholder{color:#999;font-size:14px;text-align:center;padding:20px}
+    .product-info{padding:17px}
+    .product-info h3{font-size:18px;margin-bottom:6px}
+    .product-info p{font-size:13px;color:var(--muted);min-height:40px;margin-bottom:12px}
+    .price{font-size:18px;font-weight:800}
+    .category{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gold);font-weight:700;margin-bottom:6px}
+    .about{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .about-inner{max-width:800px;margin:auto;text-align:center}
+    .about-inner p{color:var(--muted);font-size:16px}
+    footer{background:#111;color:#fff;text-align:center;padding:35px 20px}
+    footer p{color:#aaa;font-size:13px;margin-top:7px}
+    @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){
+      .nav{padding:13px 15px}.logo{font-size:21px}.navlinks{gap:12px;font-size:12px}
+      .hero{padding:65px 18px}.hero p{font-size:15px}
+      section{padding:48px 15px}.section-head h2{font-size:29px}
+      .grid{grid-template-columns:1fr 1fr;gap:12px}.product-info{padding:12px}.product-info h3{font-size:15px}
+      .product-info p{font-size:12px;min-height:45px}.price{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="#">JN STORE</a>
+    <div class="navlinks">
+      <a href="#watches">Watches</a>
+      <a href="#perfumes">Perfumes</a>
+      <a href="#about">About</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>JN STORE</h1>
+      <p>Discover stylish watches and fragrances selected for everyday elegance.</p>
+      <a class="btn" href="#watches">Explore Collection</a>
+    </div>
+  </section>
+
+  <section id="watches">
+    <div class="section-head">
+      <h2>Watches</h2>
+      <p>Update the cards below with your real watch photos, names and prices.</p>
+    </div>
+
+    <div class="grid">
+      <!-- WATCH 1 -->
+      <article class="product">
+        <div class="product-img">
+          <!-- Replace the src below with your watch image -->
+          <div class="placeholder">WATCH IMAGE 01</div>
+        </div>
+        <div class="product-info">
+          <div class="category">Watch</div>
+          <h3>Classic Watch 01</h3>
+          <p>Elegant everyday watch.</p>
+          <div class="price">Rs. 0</div>
+        </div>
+      </article>
+
+      <!-- WATCH 2 -->
+      <article class="product">
+        <div class="product-img"><div class="placeholder">WATCH IMAGE 02</div></div>
+        <div class="product-info">
+          <div class="category">Watch</div>
+          <h3>Classic Watch 02</h3>
+          <p>Clean and modern design.</p>
+          <div class="price">Rs. 0</div>
+        </div>
+      </article>
+
+      <!-- WATCH 3 -->
+      <article class="product">
+        <div class="product-img"><div class="placeholder">WATCH IMAGE 03</div></div>
+        <div class="product-info">
+          <div class="category">Watch</div>
+          <h3>Classic Watch 03</h3>
+          <p>Smart style for any occasion.</p>
+          <div class="price">Rs. 0</div>
+        </div>
+      </article>
+
+      <!-- WATCH 4 -->
+      <article class="product">
+        <div class="product-img"><div class="placeholder">WATCH IMAGE 04</div></div>
+        <div class="product-info">
+          <div class="category">Watch</div>
+          <h3>Classic Watch 04</h3>
+          <p>Simple, refined and versatile.</p>
+          <div class="price">Rs. 0</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="perfumes">
+    <div class="section-head">
+      <h2>Perfumes</h2>
+      <p>Your fragrance collection can be added here later.</p>
+    </div>
+
+    <div class="grid">
+      <!-- PERFUME 1 -->
+      <article class="product">
+        <div class="product-img"><div class="placeholder">PERFUME IMAGE 01</div></div>
+        <div class="product-info">
+          <div class="category">Perfume</div>
+          <h3>Fragrance 01</h3>
+          <p>Fresh and elegant fragrance.</p>
+          <div class="price">Rs. 0</div>
+        </div>
+      </article>
+
+      <!-- PERFUME 2 -->
+      <article class="product">
+        <div class="product-img"><div class="placeholder">PERFUME IMAGE 02</div></div>
+        <div class="product-info">
+          <div class="category">Perfume</div>
+          <h3>Fragrance 02</h3>
+          <p>Warm and sophisticated scent.</p>
+          <div class="price">Rs. 0</div>
+        </div>
+      </article>
+
+      <!-- PERFUME 3 -->
+      <article class="product">
+        <div class="product-img"><div class="placeholder">PERFUME IMAGE 03</div></div>
+        <div class="product-info">
+          <div class="category">Perfume</div>
+          <h3>Fragrance 03</h3>
+          <p>Modern fragrance for daily wear.</p>
+          <div class="price">Rs. 0</div>
+        </div>
+      </article>
+
+      <!-- PERFUME 4 -->
+      <article class="product">
+        <div class="product-img"><div class="placeholder">PERFUME IMAGE 04</div></div>
+        <div class="product-info">
+          <div class="category">Perfume</div>
+          <h3>Fragrance 04</h3>
+          <p>Distinctive and memorable scent.</p>
+          <div class="price">Rs. 0</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="about-inner">
+      <div class="section-head">
+        <h2>About JN Store</h2>
+      </div>
+      <p>JN Store brings together watches and perfumes in one simple, modern online collection. Product information and images can be updated as your catalogue grows.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <strong>JN STORE</strong>
+  <p>© 2026 JN Store. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
